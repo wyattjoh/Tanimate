@@ -226,6 +226,8 @@ void *animate_saucer(void *arg)
 		col = info->col;
 	pthread_mutex_unlock(&sl);
 
+	usleep((info->delay*200 % 10)*TUNIT);
+
 	while( 1 )
 	{	
 		pthread_mutex_lock(&sl);
@@ -254,9 +256,7 @@ void *animate_saucer(void *arg)
 			}
 			pthread_mutex_lock(&mx);	/* only one thread	*/
 			move( row, col );	/* can call curses	*/
-			addstr(" <-");
-			addch(id + 48);
-			addstr("-> ");
+			addstr(" <---> ");
 			move(LINES-1,COLS-1);	/* park cursor		*/
 			refresh();			/* and show it		*/
 			pthread_mutex_unlock(&mx);	/* done with curses	*/

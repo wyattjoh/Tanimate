@@ -5,7 +5,7 @@
 #include	<unistd.h>
 #include	<string.h>
 
-#define MAX_SAUCERS 8
+#define MAX_SAUCERS 10
 #define MAX_ROCKETS 10
 #define	MAX_THREADS	MAX_SAUCERS + MAX_ROCKETS
 #define	TUNIT   20000		/* timeunits in microseconds */
