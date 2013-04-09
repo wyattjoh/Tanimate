@@ -1,7 +1,9 @@
 all: tanimate
 
-tanimate: tanimate.c
-	cc tanimate.c -lcurses -lpthread -o tanimate
+
+
+tanimate: tanimate.c tanimate.h
+	cc tanimate.c -lcurses -lpthread -Wall -o tanimate
 
 clean:
 	rm -rf tanimate
